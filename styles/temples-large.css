@@ -6,7 +6,9 @@ body, h1, h2, p, ul, li {
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.6;
     margin: 0;
     background-color: #f4f4f4;
