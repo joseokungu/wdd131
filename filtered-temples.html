@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/filtered-temple.js" defer></script>
+        <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Rowland Momoh - Temple Album Page">
+        <meta name="author" content="Jose Okitandende Okungu">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/filtered-temples.css">
+        <link rel="stylesheet" href="styles/filtered-temples-large.css">
+        <title>Temple Album</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Temple Album</h1>
+            <nav id="navigation">
+                <a href="#" onclick="displayAllTemples()">Home</a>
+                <a href="#" onclick="displayOldTemples()">Old</a>
+                <a href="#" onclick="displayNewTemples()">New</a>
+                <a href="#" onclick="displayLargeTemples()">Large</a>
+                <a href="#" onclick="displaySmallTemples()">Small</a>
+            </nav>
+            <button class="hamburger" id="menu" aria-label="Menu"></button>
+        </header>
+        <main>
+            <h2 id="page-title">Home</h2>
+            <div class="image-container">
+                <!-- Dynamically generated temple pictures goes here -->
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer-text">
+                &copy; <span id="currentyear"></span> Jose Okitandende Okungu | DRC, Lubumbashi City
+            </p>
+            <p id="lastModified"></p>
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,144 @@
+:root {
+  --primary: #1a365d;
+  --accent: #e53e3e;
+  --light: #f7fafc;
+  --dark: #2d3748;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark);
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", serif;
+}
+
+header {
+  background: var(--dark);
+  color: var(--white);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: -100%;
+  left: 0;
+}
+
+nav.active {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top: 1px solid var(--white);
+  padding: 2rem;
+  background: var(--dark);
+
+  width: 100%;
+  top: 100%;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hamburger {
+  font-size: 2rem;
+  border: none;
+  background: none;
+}
+
+.hamburger::before {
+  content: "☰";
+  color: var(--white);
+}
+
+#menu.open::before {
+  content: "🗙";
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+main > h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 1.5rem;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+figcaption span {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+figcaption strong {
+  font-size: 1.2rem;
+}
+
+img {
+  width: 100%;
+  min-height: 230px;
+  object-fit: cover;
+}
+
+.footer {
+  background: var(--dark);
+  color: var(--light);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}

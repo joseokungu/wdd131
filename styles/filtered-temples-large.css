@@ -1,0 +1,14 @@
+@media screen and (min-width: 37.5rem) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
+    position: relative;
+    gap: 2rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
