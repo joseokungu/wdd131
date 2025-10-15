@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/form.js" defer></script>
+        <meta name="description" content="WDD 131 - Product Review Form">
+        <meta name="author" content="Jose Okitandende Okungu">
+        <link rel="stylesheet" href="styles/form.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet">
+        <title>Product Review Form</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Product Review</h1>
+        </header>
+        <main>
+            <form action="review.html" method="get" class="review-form">
+                <label for="product">Product Name <span class="required">*</span></label>
+                <select id="product" name="product" required>
+                    <option selected disabled value="">Choose a product...</option>
+
+                </select>
+
+                <fieldset class="rating">
+                    <legend>Overall Rating <span class="required">*</span></legend>
+                    <div class="stars">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star">&#9733;</label>
+                    </div>
+                </fieldset>
+
+                <label for="install-date">Date of Installation <span class="required">*</span></label>
+                <input type="date" id="install-date" name="install-date" required>
+
+                <fieldset class="features">
+                    <legend>Which feature did you find useful in the product? <br> <span class="optional">(Check all
+                            that
+                            apply)</span></legend>
+
+                    <label><input type="checkbox" name="features" value="easy-setup"> Easy Setup</label>
+                    <label><input type="checkbox" name="features" value="durable"> Durable</label>
+                    <label><input type="checkbox" name="features" value="energy-efficient"> Energy Efficient</label>
+                    <label><input type="checkbox" name="features" value="compact"> Compact Design</label>
+                    <label><input type="checkbox" name="features" value="affordable"> Affordable</label>
+                </fieldset>
+
+                <label for="review">Written Review <span class="optional">(Optional)</span></label>
+                <textarea id="review" name="review" rows="5" placeholder="Share your experience..."></textarea>
+
+                <label for="name">Your Name <span class="optional">(Optional)</span></label>
+                <input type="text" id="name" name="name">
+
+                <button type="submit" class="submit-btn">Post Review</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">
+                &copy; <span id="currentyear"></span> Jose Okitandende Okungu | DRC, Lubumbashi City
+            </p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
+
+</html>
