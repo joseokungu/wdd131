@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="TastyBites - Savor every bite at TastyBites, where flavor meets perfection. Experience our chef's signature dishes crafted with the finest ingredients, delivered fresh to your table.">
+        <meta name="author" content="Rowland Momoh">
+        <title>TastyBites - Savor Every Bite | About</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/base.css">
+        <script src="scripts/tastybites.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="logo"><a href="index.html"><img src="images/tastybites-logo.webp" alt="tastybites-logo"
+                        width="80" height="80" loading="lazy">
+            </div></a>
+
+            <nav class="nav" id="mobileMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="order.html" class="nav-link">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </div>
+            </nav>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</div>
+        </header>
+
+        <!-- Menu Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Menu</h1>
+                <p>Discover our carefully crafted dishes made with the finest ingredients</p>
+            </div>
+        </section>
+
+        <!-- Menu Filters -->
+        <section class="menu-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Items</button>
+                    <button class="filter-btn" data-category="appetizer">Appetizers</button>
+                    <button class="filter-btn" data-category="main course">Main Course</button>
+                    <button class="filter-btn" data-category="dessert">Desserts</button>
+                    <button class="filter-btn" data-category="drink">Drinks</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Items -->
+        <section class="section">
+            <div class="container">
+                <div class="menu-grid" id="menuItems">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>TastyBite</h3>
+                        <p>Delicious food, delivered fresh to your table since 2008.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="order.html">Order Online</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Hours</h3>
+                        <div class="footer-hours">
+                            <p>Monday - Thursday: 11am - 10pm</p>
+                            <p>Friday - Saturday: 11am - 11pm</p>
+                            <p>Sunday: 12pm - 9pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentyear"></span> TastyBites. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                </div>
+                <button class="checkout-button" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    </body>
+
+</html>

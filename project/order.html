@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="TastyBites - Savor every bite at TastyBites, where flavor meets perfection. Experience our chef's signature dishes crafted with the finest ingredients, delivered fresh to your table.">
+        <meta name="author" content="Rowland Momoh">
+        <title>TastyBites - Savor Every Bite | Order</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/base.css">
+        <script src="scripts/tastybites.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="logo"><a href="index.html"><img src="images/tastybites-logo.webp" alt="tastybites-logo"
+                        width="80" height="80" loading="lazy">
+            </div></a>
+
+            <nav class="nav" id="mobileMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="order.html" class="nav-link active">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </div>
+            </nav>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</div>
+        </header>
+
+        <!-- Order Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Order Online</h1>
+                <p>Place your order for pickup or delivery</p>
+            </div>
+        </section>
+
+        <!-- Order Content -->
+        <section class="section">
+            <div class="container">
+                <div class="order-layout">
+                    <!-- Order Form -->
+                    <div class="order-form">
+                        <h2>Order Details</h2>
+                        <form id="orderForm">
+                            <div class="form-group">
+                                <label>Order Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="orderType" value="pickup" checked>
+                                        <span>Pickup</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="orderType" value="delivery">
+                                        <span>Delivery</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" id="customerEmail" name="customerEmail">
+                            </div>
+
+                            <div class="form-group delivery-only" style="display: none;">
+                                <label for="deliveryAddress">Delivery Address *</label>
+                                <textarea id="deliveryAddress" name="deliveryAddress" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialInstructions">Special Instructions</label>
+                                <textarea id="specialInstructions" name="specialInstructions" rows="5"
+                                    placeholder="Any special requests or dietary restrictions..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orderTime">Preferred Time</label>
+                                <select id="orderTime" name="orderTime">
+                                    <option value="asap">As soon as possible</option>
+                                    <option value="30min">In 30 minutes</option>
+                                    <option value="1hour">In 1 hour</option>
+                                    <option value="2hours">In 2 hours</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="cart-items-summary" id="orderSummaryItems">
+                            <p class="empty-cart">Your cart is empty. <a href="menu.html">Browse our menu</a> to add
+                                items.</p>
+                        </div>
+                        <div class="order-total">
+                            <div class="total-line">
+                                <span>Subtotal:</span>
+                                <span>$<span id="orderSubtotal">0.00</span></span>
+                            </div>
+                            <div class="total-line">
+                                <span>Tax:</span>
+                                <span>$<span id="orderTax">0.00</span></span>
+                            </div>
+                            <div class="total-line delivery-fee" style="display: none;">
+                                <span>Delivery Fee:</span>
+                                <span>$<span id="deliveryFee">3.99</span></span>
+                            </div>
+                            <div class="total-line total">
+                                <span><strong>Total:</strong></span>
+                                <span><strong>$<span id="orderTotal">0.00</span></strong></span>
+                            </div>
+                        </div>
+                        <button class="place-order-btn" onclick="placeOrder()" disabled>Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>TastyBite</h3>
+                        <p>Delicious food, delivered fresh to your table since 2008.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="order.html">Order Online</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Hours</h3>
+                        <div class="footer-hours">
+                            <p>Monday - Thursday: 11am - 10pm</p>
+                            <p>Friday - Saturday: 11am - 11pm</p>
+                            <p>Sunday: 12pm - 9pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentyear"></span> TastyBites. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" onclick="toggleCart()">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                </div>
+                <button class="checkout-button" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+
+        <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    </body>
+
+</html>
